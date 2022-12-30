@@ -32,6 +32,7 @@
     "lint": "eslint . --fix --ext .js,.ts --cache",
     "prepare": "husky install",
     "release": "standard-version",
+    "serve": "node dist/index.js",
     "test": "NODE_ENV=test jest --passWithNoTests"
   }
 }
