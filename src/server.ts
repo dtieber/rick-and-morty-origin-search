@@ -3,6 +3,7 @@ import Fastify from 'fastify'
 
 import { config } from './config'
 import { loggerConfig } from './logger/logging.configuration'
+import { getOriginLocations } from './routes/get-origin-locations.route'
 
 const fastifyConfig = {
   logger: loggerConfig,
@@ -10,6 +11,8 @@ const fastifyConfig = {
 
 export const startServer = async (): Promise<FastifyInstance> => {
   const fastify = Fastify(fastifyConfig)
+
+  await fastify.register(getOriginLocations)
 
   fastify.listen({ port: config.PORT }, (err: Error | null, _: string) => {
     if (err) {
