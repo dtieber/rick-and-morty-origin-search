@@ -23,6 +23,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint . --fix --ext .js,.ts --cache",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "NODE_ENV=test jest --passWithNoTests"
   }
 }
