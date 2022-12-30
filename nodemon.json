@@ -1,0 +1,11 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "exec": "npm run build && npm run debug",
+  "verbose": true,
+  "watch": [
+    "./src/**/*.ts",
+    "./.env"
+  ]
+}
