@@ -1,5 +1,6 @@
 import type { PinoLoggerOptions } from 'fastify/types/logger'
 
+import { config } from '../config'
 import { logLevelFormatter, timestampFormatter } from './logging.formatters'
 
 const loggerFormatters = {
@@ -7,7 +8,7 @@ const loggerFormatters = {
 }
 
 export const loggerConfig: PinoLoggerOptions = {
-  level: 'info',
+  level: config.LOG_LEVEL,
   messageKey: 'msg',
   formatters: loggerFormatters,
   redact: {
