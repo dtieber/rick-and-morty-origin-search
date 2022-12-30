@@ -1,0 +1,14 @@
+{
+  "header": "# Changelog\n\nAll notable changes to this project will be documented in this auto-generated file.\n\n",
+  "releaseCommitMessageFormat": "build: release v{{currentTag}}",
+  "types": [
+    {"type":"feat", "section":":rocket: Features"},
+    {"type":"fix", "section":":bug: Bug Fixes"},
+    {"type":"refactor", "section": ":hammer: Refactorings"},
+    {"type":"build", "hidden": true},
+    {"type":"ci", "hidden":true},
+    {"type":"chore", "hidden": true},
+    {"type":"style", "hidden": true},
+    {"type":"test", "hidden": true}
+  ]
+}
