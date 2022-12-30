@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "outDir": "./dist",
+    "target": "ES2022",
+    "module": "commonjs",
+    "inlineSourceMap": true,
+    "lib": [
+      "ES2022"
+    ]
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "./node_modules",
+    "./dist"
+  ],
+  "types": [
+    "node"
+  ]
+}
