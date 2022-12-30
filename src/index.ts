@@ -1,5 +1,6 @@
 import Fastify from 'fastify'
 
+import { config } from './config'
 import { loggerConfig } from './logger/logging.configuration'
 
 const fastifyConfig = {
@@ -8,7 +9,7 @@ const fastifyConfig = {
 
 const fastify = Fastify(fastifyConfig)
 
-fastify.listen({ port: 3000 }, (err: Error | null, _: string) => {
+fastify.listen({ port: config.PORT }, (err: Error | null, _: string) => {
   if (err) {
     throw err
   }
