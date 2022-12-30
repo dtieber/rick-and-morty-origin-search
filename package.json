@@ -1,0 +1,7 @@
+{
+  "name": "rick-and-morty-origin-search",
+  "description": "An application that enables consumers to query information about Rick and Morty episodes by their episode names. The purpose of your application is to retrieve a list of all origin locations of all the characters appearing in one particular episode.",
+  "version": "0.0.1",
+  "author": "Daniel Tieber <daniel.tieber@dynatrace.com>",
+  "license": "UNLICENSED"
+}
