@@ -25,6 +25,7 @@
     "build": "tsc",
     "lint": "eslint . --fix --ext .js,.ts --cache",
     "prepare": "husky install",
+    "release": "standard-version",
     "test": "NODE_ENV=test jest --passWithNoTests"
   }
 }
