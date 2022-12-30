@@ -5,6 +5,7 @@
   "author": "Daniel Tieber <daniel.tieber@dynatrace.com>",
   "license": "UNLICENSED",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "fastify": "^4.10.2"
   },
   "devDependencies": {
