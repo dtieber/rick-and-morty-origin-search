@@ -5,6 +5,7 @@
   "author": "Daniel Tieber <daniel.tieber@dynatrace.com>",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@types/node": "^18.11.18",
     "typescript": "^4.9.4"
   }
 }
