@@ -45,4 +45,18 @@ describe('get-character', () => {
 
     expect(episodes).toEqual(new Error('Failed to fetch character with id "9999": Something bad happened.'))
   })
+
+  it('serves cached characters from cache', async () => {
+    apiMock.get.mockReturnValueOnce({ data: sampleCharacterResponse })
+
+    await getCharacter(1)
+    const episodes = await getCharacter(1)
+
+    expect(episodes).toEqual({
+      name: 'Rick Sanchez',
+      status: 'Alive',
+      species: 'Human',
+      originRef: '1',
+    })
+  })
 })
