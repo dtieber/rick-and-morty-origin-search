@@ -17,3 +17,15 @@ export const EpisodeSearchResponse = t.type({
   results: t.array(EpisodeResponse),
 })
 export type EpisodeSearchResponse = t.TypeOf<typeof EpisodeSearchResponse>
+
+const OriginRef = t.type({
+  name: t.string,
+  url: t.string,
+})
+export const CharacterResponse = t.exact(t.type({
+  name: t.string,
+  status: t.string,
+  species: t.string,
+  origin: OriginRef,
+}))
+export type CharacterResponse = t.TypeOf<typeof CharacterResponse>
