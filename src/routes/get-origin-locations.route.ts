@@ -1,6 +1,8 @@
 import type { FastifyPluginAsync } from 'fastify'
 import * as fp from 'fastify-plugin'
 
+import { getOriginsFromCharactersFromEpisode } from '../services/get-origins.service'
+import { isError } from '../util/is-error.util'
 import { requestSchema, responseSchema } from './get-origin-locations.schema'
 
 const routePlugin: FastifyPluginAsync = async (fastify, _) => {
@@ -18,31 +20,22 @@ const routePlugin: FastifyPluginAsync = async (fastify, _) => {
         queryString,
       })
 
-      await reply.code(200).send({
+      const result = await getOriginsFromCharactersFromEpisode(request.log, queryString.q)
+      if(isError(result)) {
+        return reply.code(500).send(result)
+      }
+
+      const allOrigins = result.flatMap(episodes => episodes.characters).map(character => character.origin?.name).filter(Boolean) as string[]
+      const uniqueOrigins = [
+        ...new Set(allOrigins),
+      ]
+      return reply.code(200).send({
         hits: {
           meta: {
-            total: 1,
+            total: uniqueOrigins.length,
           },
-          origins: [
-            'Earth (C-137)',
-          ],
-          details: [
-            {
-              episodeRef: 'S04E06',
-              episodeName: 'Never Ricking Morty',
-              characters: [
-                {
-                  name: 'Rick Sanchez',
-                  status: 'Alive',
-                  species: 'Human',
-                  origin: {
-                    name: 'Earth (C-137)',
-                    type: 'Planet',
-                  },
-                },
-              ],
-            },
-          ],
+          origins: uniqueOrigins,
+          details: result,
         },
       })
     },
