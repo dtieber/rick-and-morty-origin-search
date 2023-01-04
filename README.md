@@ -13,3 +13,7 @@ This project is powered by [Node.js](https://nodejs.org/en/), hence you have to 
 * Run all tests: `npm test`
 * Run linter: `npm run lint`
 * Create release: `npm run release`
+
+### API Documentation
+
+Swagger schema definitions are generated on startup and served on [http://localhost:3000/documentation](http://localhost:3000/documentation).
