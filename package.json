@@ -42,7 +42,7 @@
     "prepare": "husky install",
     "release": "standard-version",
     "serve": "node dist/index.js",
-    "test": "NODE_ENV=test jest --passWithNoTests",
+    "test": "NODE_ENV=test jest",
     "watch": "nodemon --inspect src/index.ts"
   }
 }
