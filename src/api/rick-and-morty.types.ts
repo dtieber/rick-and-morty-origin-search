@@ -29,3 +29,9 @@ export const CharacterResponse = t.exact(t.type({
   origin: OriginRef,
 }))
 export type CharacterResponse = t.TypeOf<typeof CharacterResponse>
+
+export const LocationResponse = t.exact(t.type({
+  name: t.string,
+  type: t.string,
+}))
+export type LocationResponse = t.TypeOf<typeof LocationResponse>
