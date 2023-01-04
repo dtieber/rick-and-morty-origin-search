@@ -5,6 +5,7 @@
   "author": "Daniel Tieber <daniel.tieber@dynatrace.com>",
   "license": "UNLICENSED",
   "dependencies": {
+    "@fastify/swagger": "^8.2.1",
     "dotenv": "^16.0.3",
     "env-var": "^7.3.0",
     "fastify": "^4.10.2",
