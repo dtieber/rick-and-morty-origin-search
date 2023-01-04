@@ -11,6 +11,7 @@
     "dotenv": "^16.0.3",
     "env-var": "^7.3.0",
     "fastify": "^4.10.2",
+    "fastify-healthcheck": "^4.3.0",
     "fastify-plugin": "^4.4.0",
     "fp-ts": "^2.13.1",
     "io-ts": "^2.2.20",
