@@ -31,4 +31,16 @@ describe('get-location', () => {
 
     expect(episodes).toEqual(new Error('Failed to fetch location with id "9999": Something bad happened.'))
   })
+
+  it('serves cached location from cache', async () => {
+    apiMock.get.mockReturnValueOnce({ data: sampleLocationResponse })
+
+    await getLocation(1)
+    const episodes = await getLocation(1)
+
+    expect(episodes).toEqual({
+      name: 'Earth (C-137)',
+      type: 'Planet',
+    })
+  })
 })
