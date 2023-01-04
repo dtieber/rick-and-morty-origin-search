@@ -49,4 +49,23 @@ describe('find-episodes', () => {
 
     expect(episodes).toEqual(new Error('Failed to resolve episodes for search term "rick": Something bad happened.'))
   })
+
+  it('serves cached results from cache', async () => {
+    const searchTerm = 'potion'
+    apiMock.get.mockReturnValueOnce({ data: sampleResponseForPotion })
+
+    await findEpisodes(searchTerm)
+    const episodes = await findEpisodes(searchTerm)
+
+    expect(episodes).toEqual([
+      {
+        name: 'Rick Potion #9',
+        episodeRef: 'S01E06',
+        characterIds: [
+          '1',
+          '2',
+        ],
+      },
+    ])
+  })
 })
