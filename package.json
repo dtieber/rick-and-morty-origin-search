@@ -13,7 +13,8 @@
     "fastify": "^4.10.2",
     "fastify-plugin": "^4.4.0",
     "fp-ts": "^2.13.1",
-    "io-ts": "^2.2.20"
+    "io-ts": "^2.2.20",
+    "lru-cache": "^7.14.1"
   },
   "devDependencies": {
     "@jest/globals": "^29.3.1",
