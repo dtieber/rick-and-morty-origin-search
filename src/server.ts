@@ -1,10 +1,11 @@
 import * as fastifySwagger from '@fastify/swagger'
+import * as fastifySwaggerUi from '@fastify/swagger-ui'
 import type { FastifyInstance } from 'fastify'
 import Fastify from 'fastify'
 
 import { config } from './config'
 import { loggerConfig } from './logger/logging.configuration'
-import { swaggerConfiguration } from './oas/configuration'
+import { swaggerConfiguration, swaggerUiConfiguration } from './oas/configuration'
 import { getOriginLocations } from './routes/get-origin-locations.route'
 
 const fastifyConfig = {
@@ -15,6 +16,7 @@ export const startServer = async (): Promise<FastifyInstance> => {
   const fastify = Fastify(fastifyConfig)
 
   await fastify.register(fastifySwagger, swaggerConfiguration)
+  await fastify.register(fastifySwaggerUi, swaggerUiConfiguration)
 
   await fastify.register(getOriginLocations)
 
