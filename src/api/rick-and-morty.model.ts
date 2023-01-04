@@ -10,3 +10,8 @@ export type Character = {
   species: string
   originRef?: string
 }
+
+export type Location = {
+  name: string
+  type: string
+}
