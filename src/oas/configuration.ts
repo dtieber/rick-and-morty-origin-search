@@ -18,3 +18,11 @@ export const swaggerConfiguration = {
     ],
   },
 }
+
+export const swaggerUiConfiguration = {
+  routePrefix: '/documentation',
+  uiConfig: {
+    docExpansion: 'full',
+    deepLinking: false,
+  },
+}
