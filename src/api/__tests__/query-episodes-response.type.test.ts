@@ -14,7 +14,7 @@ describe('query-episode-response type', () => {
     expect(result).toEqual(right(sampleQueryEpisodesResponse.data))
   })
 
-  it('rejects an invalid location', () => {
+  it('rejects an invalid response', () => {
     const location = {}
 
     const parsed = QueryEpisodesResponse.decode(location.toString())
