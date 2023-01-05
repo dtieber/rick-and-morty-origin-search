@@ -17,3 +17,7 @@ This project is powered by [Node.js](https://nodejs.org/en/), hence you have to 
 ### API Documentation
 
 Swagger schema definitions are generated on startup and served on [http://localhost:3000/documentation](http://localhost:3000/documentation).
+
+### Earlier versions
+
+Check out [this commit (#40a0ca2)](https://github.com/dtieber/rick-and-morty-origin-search/commit/40a0ca2e3a7a7cec5336f4fdef6f008e7ef73367) for a version of this application that is based on RESTful calls to downstream services.
