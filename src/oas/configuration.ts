@@ -4,7 +4,7 @@ export const swaggerConfiguration = {
   swagger: {
     info: {
       title: 'Rick and Morty Origin Search',
-      version: '0.1.0',
+      version: '1.0.0',
     },
     host: `localhost:${config.PORT}`,
     schemes: [
