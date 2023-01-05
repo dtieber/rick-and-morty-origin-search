@@ -1,7 +1,10 @@
 import * as t from 'io-ts'
 
 const QueryEpisodesResponseInfo = t.exact(t.type({
-  count: t.number,
+  count: t.union([
+    t.number,
+    t.null,
+  ]),
 }))
 export type QueryEpisodesResponseInfo = t.TypeOf<typeof QueryEpisodesResponseInfo>
 
