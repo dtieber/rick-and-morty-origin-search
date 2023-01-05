@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this auto-generated file.
 
 
+## [1.1.0](https://github.com/dtieber/rick-and-morty-origin-search/compare/v1.0.0...v1.1.0) (2023-01-05)
+
+
+### :bug: Bug Fixes
+
+* make `count` in query response nullable ([cfab82c](https://github.com/dtieber/rick-and-morty-origin-search/commit/cfab82cdad4410bfc75eb1ea894c886e4f199ff4))
+
+
+### :rocket: Features
+
+* adapt version in swagger info ([22df396](https://github.com/dtieber/rick-and-morty-origin-search/commit/22df39676120e70f8cbc0481cd3345ded74feacb))
+* exit early if given search-term does not yield any results ([7f51595](https://github.com/dtieber/rick-and-morty-origin-search/commit/7f51595f383c938c52c90bdbc54cc0a2ff9f7970))
+
 ## 1.0.0 (2023-01-05)
 
 
