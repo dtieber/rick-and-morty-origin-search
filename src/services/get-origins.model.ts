@@ -1,33 +1,17 @@
-import type { Character } from '../api/rick-and-morty.model'
+export type Origin = {
+  name: string
+  type: string
+}
+
+export type CharacterWithDetails = {
+  name: string
+  status: string
+  species: string
+  origin?: Origin
+}
 
 export type EpisodeWithCharacterAndOriginDetails = {
   episodeRef: string
   episodeName: string
-  characters: {
-    name: string
-    status: string
-    species: string
-    origin?: {
-      name: string
-      type: string
-    }
-  }[]
-}
-
-export type CharacterWithOriginRef = Pick<Character, 'name' | 'status'| 'species'> & {
-  originRef: string
-}
-
-export type CharacterExtendedByLocationDetails = {
-  name: string
-  status: string
-  species: string
-  origin: {
-    name: string,
-    type: string
-  }
-}
-
-export type EpisodeExtendedByCharacterDetails = Pick<EpisodeWithCharacterAndOriginDetails, 'episodeRef' | 'episodeName'> & {
-  characters: Character[]
+  characters: CharacterWithDetails[]
 }
