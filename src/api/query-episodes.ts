@@ -7,7 +7,11 @@ export const queryEpisodeDetails = async (searchTerm: string): Promise<QueryEpis
   try {
     const query = { query: createQuery(searchTerm) }
     const result = await gqlClient.query(query)
-    return valueOrThrow(QueryEpisodesResponse, result.data)
+    const validatedResult = valueOrThrow(QueryEpisodesResponse, result.data)
+    if(validatedResult.episodes.info.count === null) {
+      return new Error(`Search-term: "${searchTerm}" did not yield any results.`)
+    }
+    return validatedResult
   } catch (e) {
     const error = e as Error
     return new Error(`Failed to query episode details: ${error.message}`)

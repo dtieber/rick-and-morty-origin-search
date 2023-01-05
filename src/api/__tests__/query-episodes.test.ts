@@ -20,6 +20,24 @@ describe('query-episodes', () => {
     expect(result).toEqual(sampleQueryEpisodesResponse.data)
   })
 
+  it('returns an error if search-term does not yield any results', async () => {
+    gqlClientMock.query.mockReturnValueOnce({
+      data: {
+        episodes: {
+          info: {
+            count: null,
+          },
+          results: [
+          ],
+        },
+      },
+    })
+
+    const result = await queryEpisodeDetails('potqweqweqweeqwweqweewqqweion')
+
+    expect(result).toBeInstanceOf(Error)
+  })
+
   it('returns an error if sending query fails', async () => {
     gqlClientMock.query.mockImplementationOnce(() => new Error())
 
