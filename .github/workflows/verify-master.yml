@@ -1,0 +1,32 @@
+name: Verify `main` branch
+
+on: [push]
+
+jobs:
+  verify-master:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Clean install dependencies
+        run: |
+          npm install
+
+      - name: Build project
+        run: |
+          npm run build
+
+      - name: Run linter
+        run: |
+          npm run lint
+
+      - name: Run tests
+        run: |
+          npm run test -- --runInBand
