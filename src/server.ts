@@ -22,11 +22,7 @@ export const startServer = async (): Promise<FastifyInstance> => {
   await fastify.register(fastifyHealthcheck)
   await fastify.register(getOriginLocations)
 
-  fastify.listen({ port: config.PORT }, (err: Error | null, _: string) => {
-    if (err) {
-      throw err
-    }
-  })
+  await fastify.listen({ port: config.PORT })
 
   await fastify.ready()
   fastify.swagger()
